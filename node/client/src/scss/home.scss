@@ -1,0 +1,12 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .image{
+  }
+  .text{
+    padding: 50px;
+  }
+}

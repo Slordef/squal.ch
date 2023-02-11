@@ -1,0 +1,84 @@
+@import '@csstools/normalize.css';
+
+@font-face {
+  font-family: KeyVirtue;
+  src: url("@/assets/fonts/KeyVirtue.ttf");
+}
+
+@font-face {
+  font-family: "Amatic sc";
+  src: url("@/assets/fonts/AmaticSC-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Amatic sc";
+  src: url("@/assets/fonts/AmaticSC-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Louis George Cafe";
+  src: url("@/assets/fonts/Louis George Cafe Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Louis George Cafe";
+  src: url("@/assets/fonts/Louis George Cafe Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Louis George Cafe";
+  src: url("@/assets/fonts/Louis George Cafe Light Italic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Louis George Cafe";
+  src: url("@/assets/fonts/Louis George Cafe Bold Italic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+body {
+  font-family: "Louis George Cafe", sans-serif;
+  font-size: 1.6em;
+  background: center fixed no-repeat linear-gradient(to bottom, #eee, #fff);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #2e9897;
+}
+
+.blur {
+  filter: blur(4px);
+  transition: .4s;
+}
+
+#app {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@import "home";
+@import "projects";
+@import "header";
+@import "footer";
+@import "pictureFrame";
+@import "pictureWatcher";
+@import "gallery";
+@import "contact";

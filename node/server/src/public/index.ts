@@ -1,11 +1,10 @@
-import express from 'express';
+import { makeDatabase } from '../main/factories/database/make-database';
+import { makeServer } from '../main/factories/server/make-server';
+import { makeAdmin } from '../main/factories/make-admin';
 
-const app = express();
-
-app.get('/', (req, res) => {
-	res.send('Hello World!');
-});
-
-app.listen(3000, () => {
-	console.log('Server is running on port 3000');
+const database = makeDatabase();
+const server = makeServer();
+database.connect().then(() => {
+	server.start();
+	makeAdmin();
 });

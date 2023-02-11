@@ -1,0 +1,17 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [ opened, synchronize, reopened, edited ]
+
+jobs:
+  cypress-tests:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Cypress run docker
+      run: |
+        docker compose -f cypress.yml up

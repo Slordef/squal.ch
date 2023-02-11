@@ -1,5 +1,11 @@
 import { createApp } from 'vue';
-import './style.css';
 import App from './App.vue';
+import Vue3TouchEvents from 'vue3-touch-events';
+import router from '@/router';
+import store from '@/store';
 
-createApp(App).mount('#app');
+createApp(App)
+	.use(Vue3TouchEvents)
+	.use(store)
+	.use(router)
+	.mount('#app');

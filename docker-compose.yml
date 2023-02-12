@@ -19,6 +19,11 @@ services:
       - ./db:/docker-entrypoint-initdb.d
     ports:
       - '3306:3306'
+    healthcheck:
+      test: mysqladmin ping -h localhost -u test -ptest
+      interval: 10s
+      timeout: 5s
+      retries: 3
 
   node:
     build:
@@ -39,4 +44,5 @@ services:
       - client_node_modules:/app/node/client/node_modules/
       - server_node_modules:/app/node/server/node_modules/
     depends_on:
-      - db
+      db:
+        condition: service_healthy

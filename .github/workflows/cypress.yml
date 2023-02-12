@@ -9,9 +9,23 @@ on:
 
 jobs:
   cypress-tests:
-    - name: Checkout
-      uses: actions/checkout@v2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Cypress run docker
-      run: |
-        docker compose -f cypress.yml up
+      - name: Run Base Docker
+        run: |
+          docker-compose up -d
+
+      - name: Build Cypress Docker
+        run: |
+          docker build -t cypress -f docker/dev/cypress/Dockerfile .
+
+      - name: Run Cypress Docker
+        run: |
+          docker run --rm --network="host" -e CYPRESS_BASE_URL=http://localhost:3000 cypress
+
+      - name: Stop Base Docker
+        run: |
+          docker-compose down

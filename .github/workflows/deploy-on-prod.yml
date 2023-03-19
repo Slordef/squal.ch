@@ -1,0 +1,30 @@
+name: Deploy on Prod
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-prod:
+    runs-on: [ self-hosted, prod ]
+    defaults:
+      run:
+        working-directory: /production
+    steps:
+      - name: Fetch latest changes to the repo
+        run: git pull origin main
+
+      - name: Start build
+        run: docker compose -f ./docker-compose-prod.yml build
+        env:
+          DOCKER_BUILDKIT: 1
+
+      - name: Start the built images
+        run: docker compose -f ./docker-compose-prod.yml up -d
+
+      - name: Wait 10 sec
+        run: sleep 10
+
+      - name: Ensure containers are running
+        run: |
+          docker compose -f ./docker-compose-prod.yml logs node
+          ! (docker compose ps | grep 'Exit')

@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig",
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.test.js",
+    "**/*.spec.ts",
+    "**/*.spec.js"
+  ]
+}

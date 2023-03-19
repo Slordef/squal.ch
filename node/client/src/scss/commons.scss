@@ -1,0 +1,78 @@
+.df {
+  display: flex;
+}
+
+.col {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+$justify-content: (
+        s: flex-start,
+        e: flex-end,
+        c: center,
+        b: space-between,
+        a: space-around
+);
+
+@each $key, $value in $justify-content {
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+
+$align-items: (
+        s: flex-start,
+        e: flex-end,
+        c: center
+);
+
+@each $key, $value in $align-items {
+  .ai-#{$key} {
+    align-items: $value;
+  }
+}
+
+.flex-100 {
+  flex: 1 1 100%;
+}
+
+.container {
+  flex: 1 1 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+$margins: (
+        m: margin,
+        mb: margin-bottom,
+        mt: margin-top,
+        ml: margin-left,
+        mr: margin-right,
+        p: padding,
+        pb: padding-bottom,
+        pt: padding-top,
+        pl: padding-left,
+        pr: padding-right
+);
+
+@each $key, $value in $margins {
+  @for $i from 1 through 20 {
+    .#{$key}-#{$i} {
+      #{$value}: $i * 5px;
+    }
+  }
+}

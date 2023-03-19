@@ -7,6 +7,9 @@ export const mutations: MutationTree<State> = {
 	},
 	SET_IMAGES(state, images) {
 		state.images = images;
+	},
+	SET_CATEGORIES(state, categories) {
+		state.categories = categories;
 	}
 };
  

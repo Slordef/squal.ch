@@ -10,6 +10,10 @@ export class ExpressFileAdapter implements FileHandler {
 		}
 
 		const field = files.field;
+		if (field == null) {
+			return Promise.reject(null);
+		}
+		
 		if (this.isMultipleFiles(field)) {
 			const names = [];
 			for (const file of field) {

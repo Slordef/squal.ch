@@ -11,6 +11,11 @@
         </router-link>
       </div>
       <div class="nav-elem">
+        <router-link :to="{name:'Book Cover'}">
+          Couvertures
+        </router-link>
+      </div>
+      <div class="nav-elem">
         <router-link :to="{name:'Contact'}">
           Contact
         </router-link>
@@ -29,14 +34,10 @@
 
 <script lang="ts" setup>
 import HeaderLogo from '@/components/HeaderLogo.vue';
-import { computed, ref } from 'vue';
-import { useStore } from 'vuex';
-import { Category } from '@/intefaces/category';
+import { ref } from 'vue';
 
-const store = useStore();
 
 const opened = ref(false);
-const choices = computed(() => store.getters.getCategories?.filter((c: Category) => c.index !== '0') || []);
 const open = () => {
 	opened.value = !opened.value;
 };

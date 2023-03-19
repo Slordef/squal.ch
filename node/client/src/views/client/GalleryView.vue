@@ -2,11 +2,10 @@
   <section class="gallery">
     <div class="gallery_pictures">
       <PictureFrame
-        v-for="(id, index) in images"
-        :id="id"
-        :key="id"
-        :index="index"
-        @click="openWatcher(index)"
+        v-for="(image, idx) in images"
+        :key="image.id"
+        :image="image"
+        @click="openWatcher(idx)"
       />
     </div>
   </section>
@@ -14,15 +13,18 @@
 
 <script lang="ts" setup>
 import PictureFrame from '@/components/PictureFrame.vue';
-import { computed } from 'vue';
-import { useStore } from 'vuex';
 import { emitter } from '@/store/emitter';
+import { ArtImage } from '@/intefaces/art-image';
 
-const store = useStore();
-
-const images = computed(() => store.getters.getImages || []);
+// const images = computed(() => store.getters.getImages || []);
+const images: ArtImage[] = [
+	{ id: '1', name: '', description: '', link: 'gallery/web2.jpg' },
+	{ id: '1', name: '', description: '', link: 'gallery/web1.jpg' },
+	{ id: '1', name: '', description: '', link: 'gallery/web4.jpg' },
+	{ id: '1', name: '', description: '', link: 'gallery/web5.jpg' }
+];
 const openWatcher = (index: number) => {
-	emitter.emit('open', images.value, index);
+	emitter.emit('open', images, index);
 };
 </script>
 

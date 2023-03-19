@@ -1,9 +1,9 @@
 <template>
-  <router-view />
+  <router-view class="admin" />
 </template>
 
 <script lang="ts" setup>
 </script>
 
-<style scoped>
+<style scoped src="../scss/admin.scss">
 </style>

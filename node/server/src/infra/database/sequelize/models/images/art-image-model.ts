@@ -1,5 +1,5 @@
 import { DataTypes, Model, Optional, Sequelize } from 'sequelize';
-import { ArtImage } from '../../../../../domain/models/images/art-image';
+import { ArtImage } from '../../../../../domain/models/art-image/art-image';
 
 export class ArtImageModel extends Model<ArtImage, Optional<ArtImage, 'id'>> {
 }

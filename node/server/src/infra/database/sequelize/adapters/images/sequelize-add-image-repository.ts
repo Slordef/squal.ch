@@ -1,5 +1,5 @@
 import { AddImage } from '../../../../../domain/contracts/database/images/add-image';
-import { ArtImage } from '../../../../../domain/models/images/art-image';
+import { ArtImage } from '../../../../../domain/models/art-image/art-image';
 import { ArtImageModel } from '../../models/images/art-image-model';
 
 export class SequelizeAddImageRepository implements AddImage {

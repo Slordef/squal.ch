@@ -8,7 +8,8 @@
   font-size: .4em;
   font-weight: bold;
 }
-.pictureFrames{
+
+.pictureFrames {
   transition: 1s;
   display: flex;
   flex-direction: row;
@@ -16,15 +17,12 @@
   flex-wrap: wrap;
 }
 
-.pictureFrame{
+.pictureFrame {
   position: relative;
-  margin: 20px;
   padding: 0;
   box-sizing: border-box;
-  width: 60vw;
-  max-width: 320px;
-  height: 60vw;
-  max-height: 320px;
+  width: 100%;
+  max-width: 300px;
   background-color: white;
 
   box-shadow: 5px 8px 15px 5px rgba(0, 0, 0, 0.30);
@@ -32,66 +30,46 @@
   transition: .2s;
 
   .pictureFrame_image {
-    overflow: hidden;
     padding: 0;
-    width: 100%;
+    margin: 0;
     height: 100%;
+
     img {
-      object-position: center;
-      object-fit: cover;
       width: 100%;
       height: 100%;
     }
   }
 
-  .pictureFrame_content{
-    position: absolute;
-    padding: 10px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .3s;
-    background-color: rgba(255, 255, 255, 0.5);
-    font-size: 1.7em;
-    text-align: center;
-
-  }
-
-  &:hover{
+  &:hover {
     transform: scale(1.05);
     box-shadow: 0 25px 45px -20px;
     cursor: pointer;
-    .pictureFrame_content{
-      opacity: 1;
-    }
   }
 
 }
 
 @media all and (max-width: 800px) {
-  .pictureFrame{
-    .pictureFrame_content{
+  .pictureFrame {
+    .pictureFrame_content {
       font-size: 120%;
     }
   }
 }
-.pictureFrame_slide-enter-active,.pictureFrame_slide-leave-active{
-  transform: translate(0%,0%);
+
+.pictureFrame_slide-enter-active, .pictureFrame_slide-leave-active {
+  transform: translate(0%, 0%);
   opacity: 1;
   transition: 1s;
 }
 
-.pictureFrame_slide-enter-from,.pictureFrame_slide-leave-to{
+.pictureFrame_slide-enter-from, .pictureFrame_slide-leave-to {
   opacity: 0;
 }
+
 .pictureFrame_slide-enter-from {
-  transform: translate(3%,3%);
+  transform: translate(3%, 3%);
 }
+
 .pictureFrame_slide-leave-to {
-  transform: translate(-3%,-3%);
+  transform: translate(-3%, -3%);
 }

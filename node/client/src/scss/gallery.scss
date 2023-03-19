@@ -1,13 +1,16 @@
-.gallery{
+.gallery {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
+
 .gallery_pictures {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 50px;
+  width: 100%;
+  justify-items: center;
+  max-width: 1280px;
 }

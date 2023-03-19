@@ -51,14 +51,15 @@
 import { emitter } from '@/store/emitter';
 import PictureWatcherImage from '@/components/PictureWatcherImage.vue';
 import { computed, onMounted, ref } from 'vue';
-import { useStore } from 'vuex';
+// import { useStore } from 'vuex';
 import { ArtImage } from '@/intefaces/art-image';
 
-const store = useStore();
+// const store = useStore();
 
-const list = ref<string[]>([]);
+const list = ref<ArtImage[]>([]);
 const show = ref(false);
-const images = computed<ArtImage[]>(() => list.value.map(id => (store.getters.getImages || []).find((i: ArtImage) => i.id === id)));
+// const images = computed<ArtImage[]>(() => list.value.map(id => (store.getters.getImages || []).find((i: ArtImage) => i.id === id)));
+const images = computed<ArtImage[]>(() => list.value);
 
 const indexing = ref(0);
 const setX = ref(0);
@@ -150,7 +151,7 @@ onMounted(() => {
 	document.addEventListener('keydown', keydown);
 });
 
-emitter.on('open', (images: string[], index: number) => {
+emitter.on('open', (images: ArtImage[], index: number) => {
 	indexing.value = index;
 	list.value = images;
 	show.value = true;

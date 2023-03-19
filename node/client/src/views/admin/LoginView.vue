@@ -1,6 +1,8 @@
 <template>
   <div class="login-container">
+    <AdminSpinner v-if="loading" />
     <form
+      v-else
       class="form-container"
       @submit.prevent="login"
     >
@@ -48,26 +50,33 @@
 </template>
 
 <script lang="ts" setup>
+import AdminSpinner from '@/components/admin/AdminSpinner.vue';
 import { useStore } from 'vuex';
 import { onBeforeMount, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 const store = useStore();
 const router = useRouter();
-onBeforeMount(() => {
-	store.dispatch('isConnected').then(isConnected => {
-		if (isConnected) {
-			router.push('/admin/dashboard');
-		}
-	});
-});
 
 const email = ref('');
 const password = ref('');
 const status = ref('');
+const loading = ref(true);
+
+
+onBeforeMount(() => {
+	store.dispatch('isConnected').then(isConnected => {
+		if (isConnected) {
+			router.push('/admin/dashboard');
+		} else
+			loading.value = false;
+	});
+});
 
 const login = () => {
+	status.value = '';
 	store.dispatch('login', { email: email.value, password: password.value }).then(success => {
+		console.log(success);
 		if (!success) {
 			status.value = 'Identifiants incorrects';
 			return;

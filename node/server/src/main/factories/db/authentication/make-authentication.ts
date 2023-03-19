@@ -5,8 +5,8 @@ import {
 import {
 	SequelizeAddAuthRepository
 } from '../../../../infra/database/sequelize/adapters/auth/sequelize-add-auth-repository';
-import { BcryptAdapter } from '../../../../infra/cryptography/bcrypt/bcrypt-adapter';
-import { JwtAdapter } from '../../../../infra/cryptography/jwt/jwt-adapter';
+import { BcryptAdapter } from '../../../../infra/cryptography/bcrypt/adapter/bcrypt-adapter';
+import { JwtAdapter } from '../../../../infra/cryptography/jwt/adapter/jwt-adapter';
 import { saltRounds, secret } from '../../../config';
 
 export function makeAuthentication() {

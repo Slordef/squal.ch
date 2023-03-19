@@ -2,7 +2,7 @@
   position: relative;
   height: 160px;
   margin: 0;
-  padding-left: 150px;
+  padding-left: 90px;
   margin-bottom: 100px;
   display: flex;
   flex-direction: row;
@@ -30,13 +30,13 @@
   }
 
   &::before {
+    content: '';
     position: absolute;
-    content: '|';
-    top: 0;
-    left: 0;
-    //transform-origin: top left;
-    color: #2e9897;
-    transform: rotate(90deg) translate(160px, -300px) scale(3, 20);
+    top: 100%;
+    left: 100px;
+    background-color: #2e9897;
+    height: 3px;
+    width: 340px;
   }
 
   .menu {

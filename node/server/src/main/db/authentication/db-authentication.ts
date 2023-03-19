@@ -1,15 +1,15 @@
 import { Authentication } from '../../../domain/usecases/authentication';
 import { GetAccountByEmail } from '../../../domain/contracts/database/account/get-account-by-email';
 import { AccountAuth } from '../../../domain/models/account/account-auth';
-import { HashCompare } from '../../../domain/contracts/cryptography/hash-compare';
+import { HashComparer } from '../../../domain/contracts/cryptography/hash-comparer';
 import { AddAuth } from '../../../domain/contracts/database/auth/add-auth';
-import { Encrypt } from '../../../domain/contracts/cryptography/encrypt';
+import { Encrypter } from '../../../domain/contracts/cryptography/encrypter';
 
 export class DbAuthentication implements Authentication {
 	constructor(
         private readonly getAccountByEmailRepository: GetAccountByEmail,
-        private readonly HashComparer: HashCompare,
-        private readonly encrypter: Encrypt,
+        private readonly HashComparer: HashComparer,
+        private readonly encrypter: Encrypter,
         private readonly addAuthRepository: AddAuth,
 	) {
 	}

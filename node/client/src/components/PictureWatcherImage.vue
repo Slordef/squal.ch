@@ -22,7 +22,6 @@
 
 <script lang="ts" setup>
 import JQuery from 'jquery';
-import { defineProps } from 'vue';
 import { ArtImage } from '@/intefaces/art-image';
 
 const $ = JQuery;

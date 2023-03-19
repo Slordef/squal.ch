@@ -7,6 +7,7 @@ import { ArtImage } from '@/intefaces/art-image';
 import { ContactResponse } from '@/intefaces/contact-response';
 import { LoggedResponse } from '@/intefaces/logged-response';
 import { LoginParam, LoginResponse } from '@/intefaces/login';
+import { Category } from '@/intefaces/category';
 
 export const actions: ActionTree<State, State> = {
 	apiGet({ dispatch }) {
@@ -23,6 +24,13 @@ export const actions: ActionTree<State, State> = {
 	apiImages({ commit }) {
 		return api.get<ArtImage[]>('/images').then(r => {
 			commit('SET_IMAGES', r.data);
+		}).catch(err => {
+			console.error(err);
+		});
+	},
+	apiCategories({ commit }) {
+		return api.get<Category[]>('/categories').then(r => {
+			commit('SET_CATEGORIES', r.data);
 		}).catch(err => {
 			console.error(err);
 		});
@@ -47,8 +55,9 @@ export const actions: ActionTree<State, State> = {
 		return api.post<LoginResponse>('/login', log).then(r => {
 			if (r.status === 200) {
 				localStorage.setItem('token', r.data.accessToken);
+				return true;
 			}
-			return true;
+			return false;
 		}).catch(() => {
 			return false;
 		});

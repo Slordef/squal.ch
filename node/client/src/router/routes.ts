@@ -1,4 +1,3 @@
-import HomeView from '@/views/client/HomeView.vue';
 import GalleryView from '@/views/client/GalleryView.vue';
 import ContactView from '@/views/client/ContactView.vue';
 import Error404View from '@/views/client/Error404View.vue';
@@ -6,6 +5,7 @@ import ClientView from '@/views/ClientView.vue';
 import AdminView from '@/views/AdminView.vue';
 import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 import store from '@/store';
+import BookCoverView from '@/views/client/BookCoverView.vue';
 
 const connectedMiddleware = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
 	const connected = await store.dispatch('isConnected');
@@ -31,6 +31,18 @@ export const routes = [
 				component: () => import('@/views/admin/DashboardView.vue'),
 				beforeEnter: connectedMiddleware
 			},
+			{
+				path: 'images',
+				name: 'Images',
+				component: () => import('@/views/admin/ImagesView.vue'),
+				beforeEnter: connectedMiddleware
+			},
+			{
+				path: 'settings',
+				name: 'Settings',
+				component: () => import('@/views/admin/SettingsView.vue'),
+				beforeEnter: connectedMiddleware
+			},
 			{ path: '', redirect: '/admin/login' }
 		]
 	},
@@ -38,8 +50,9 @@ export const routes = [
 		path: '/',
 		component: ClientView,
 		children: [
-			{ path: '/', name: 'Home', component: HomeView },
-			{ path: 'gallery', name: 'Gallery', component: GalleryView },
+			// { path: '/', name: 'Home', component: HomeView },
+			{ path: '/', name: 'Gallery', component: GalleryView },
+			{ path: 'book-cover', name: 'Book Cover', component: BookCoverView },
 			{ path: 'contact', name: 'Contact', component: ContactView },
 		]
 	},

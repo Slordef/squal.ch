@@ -1,5 +1,5 @@
 import { GetAllImages } from '../../../../../domain/contracts/database/images/get-all-images';
-import { ArtImage } from '../../../../../domain/models/images/art-image';
+import { ArtImage } from '../../../../../domain/models/art-image/art-image';
 import { ArtImageModel } from '../../models/images/art-image-model';
 
 export class SequelizeGetAllImagesRepository implements GetAllImages {

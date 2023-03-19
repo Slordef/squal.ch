@@ -7,5 +7,8 @@ export const getters: GetterTree<State, State> = {
 	},
 	getImages(state) {
 		return state.images;
+	},
+	getCategories(state) {
+		return state.categories;
 	}
 };

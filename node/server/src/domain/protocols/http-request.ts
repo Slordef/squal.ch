@@ -5,8 +5,8 @@ export interface HttpRequest {
         authorization?: string;
         'x-forwarded-for'?: string;
     };
-    body: any;
-    params: any;
-    account: Account | null;
+    body?: any;
+    params?: any;
+    account?: Account | null;
     files?: any;
 }

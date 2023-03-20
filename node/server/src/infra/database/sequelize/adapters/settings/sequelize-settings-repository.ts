@@ -2,7 +2,7 @@ import { GetSettings } from '../../../../../domain/contracts/database/settings/g
 import { Settings } from '../../../../../domain/models/settings/settings';
 import { SettingsModel } from '../../models/settings/settings-model';
 
-export class SequelizeGetSettingsRepository implements GetSettings {
+export class SequelizeSettingsRepository implements GetSettings {
 	async get(): Promise<Settings | null> {
 		const allSettings = await SettingsModel.findAll({
 			limit: 1

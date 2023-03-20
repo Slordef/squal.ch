@@ -4,7 +4,7 @@ import {
 } from '../../../infra/database/sequelize/adapters/connection-attempts/sequelize-get-connection-attempts-repository';
 import {
 	SequelizeAddConnectionAttemptRepository
-} from '../../../infra/database/sequelize/adapters/connection-attempts/sequelize-add-connection-attempts-repository';
+} from '../../../infra/database/sequelize/adapters/connection-attempts/sequelize-connection-attempts-repository';
 import {
 	SequelizeDelConnectionAttemptsRepository
 } from '../../../infra/database/sequelize/adapters/connection-attempts/sequelize-del-connection-attempts-repository';

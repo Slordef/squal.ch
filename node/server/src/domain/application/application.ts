@@ -1,5 +1,7 @@
 import { PluginManager } from '../plugins/plugin-manager';
 import { AppPlugin } from '../plugins/app-plugin';
+import { Database } from '../database/database';
+import { ApiServer } from '../contracts/api/api-server';
 
 export class Application {
 	private pluginManager: PluginManager = new PluginManager();
@@ -16,7 +18,7 @@ export class Application {
 	}
 
 	async start(): Promise<void> {
-		await this.pluginManager.database.database.connect();
-		await this.pluginManager.api.apiServer.start();
+		await this.pluginManager.getInterface<Database>('Database').connect();
+		await this.pluginManager.getInterface<ApiServer>('ApiServer').start();
 	}
 }

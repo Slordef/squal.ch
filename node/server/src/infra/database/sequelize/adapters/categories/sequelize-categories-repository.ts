@@ -2,7 +2,7 @@ import { GetAllCategories } from '../../../../../domain/contracts/database/categ
 import { Category } from '../../../../../domain/models/category/category';
 import { CategoryModel } from '../../models/category/category-model';
 
-export class SequelizeGetCategoryRepository implements GetAllCategories {
+export class SequelizeCategoriesRepository implements GetAllCategories {
 	async getAll(): Promise<Category[]> {
 		const categories = await CategoryModel.findAll();
 		return categories.map(cat => cat.dataValues);

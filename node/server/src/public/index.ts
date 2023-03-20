@@ -1,12 +1,14 @@
-import { Application } from '../domain/application/application';
+import { makeApplication } from '../main/factories/application/make-application';
 import { ExpressPlugin } from '../infra/api/express/express-plugin';
-import { MakeAdmin } from '../main/factories/make-admin';
+import { BcryptPlugin } from '../infra/cryptography/bcrypt/bcrypt-plugin';
+import { JwtPlugin } from '../infra/cryptography/jwt/jwt-plugin';
+import { SequelizePlugin } from '../infra/database/sequelize/sequelize-plugin';
+import { NodemailerPlugin } from '../infra/mails/nodemailer/nodemailer-plugin';
 
-const app = new Application(
-	ExpressPlugin
+makeApplication(
+	ExpressPlugin,
+	SequelizePlugin,
+	BcryptPlugin,
+	JwtPlugin,
+	NodemailerPlugin
 );
-
-app.start().then(() => {
-	const adminFactory = new MakeAdmin();
-	adminFactory.make(app);
-});

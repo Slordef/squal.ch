@@ -28,7 +28,7 @@ const translate = ref(200);
 const style = computed(() => {
 	return `transform: translateX(${translate.value}px) scaleX(${scale.value});`;
 });
-let interval: number | undefined;
+let interval: ReturnType<typeof setInterval> | undefined;
 const move = (pos: number, size: number, duration = 800, callback: (() => void) | undefined = undefined) => {
 	$(el).animate({
 		mo: pos,

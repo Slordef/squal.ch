@@ -85,12 +85,12 @@
           </transition>
         </div>
       </form>
-      <h2 class="text-center">
+      <h2 class="text-center title-w100">
         <a
           href="mailto:pascalebernasconi@gmail.com"
         >pascalebernasconi@gmail.com</a>
       </h2>
-      <h2 class="text-center">
+      <h2 class="text-center title-w100">
         <a
           href="https://www.instagram.com/squal_art/"
         >
@@ -161,4 +161,8 @@ const send = () => {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+h2 {
+  font-size: min(5vw, 2.5rem);
+}
+</style>

@@ -1,38 +1,44 @@
-.contact{
+.contact {
   padding: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  .title{}
+  .title {
+  }
 
-  .content{
-    max-width: 500px;
+  .content {
+    max-width: 700px;
     width: 100%;
-    .form{
+
+    .form {
       .captcha {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
       }
-      .form-group{
+
+      .form-group {
         display: flex;
         flex-direction: column;
 
-        .label{
+        .label {
           padding: 10px 15px;
         }
-        .input{
+
+        .input {
           border-radius: 5px;
           border: 1px solid rgba(95, 95, 95, 0.61);
           padding: 10px 15px;
-          &:focus{
+
+          &:focus {
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.11);
           }
         }
-        .textarea{
+
+        .textarea {
           border-radius: 5px;
           border: 1px solid rgba(95, 95, 95, 0.61);
           padding: 10px 15px;
@@ -40,20 +46,24 @@
           font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
         }
       }
-      .contact_status{
+
+      .contact_status {
         padding: 1px 2px;
-        div{
+
+        div {
           width: 100%;
           padding: 10px 20px;
           border-radius: 5px;
           box-sizing: border-box;
         }
-        .success{
+
+        .success {
           color: rgba(92, 205, 28, 1);
           border: 1px solid rgba(92, 205, 28, 1);
           background-color: rgba(115, 255, 34, 0.15);
         }
-        .error{
+
+        .error {
           color: rgba(205, 14, 0, 1);
           border: 1px solid rgba(205, 14, 0, 1);
           background-color: rgba(255, 20, 0, 0.16);

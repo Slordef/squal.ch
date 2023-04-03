@@ -41,5 +41,10 @@
       "always"
     ],
     "vue/no-multiple-template-root": "off"
-  }
+  },
+  "ignorePatterns": [
+    "**/node_modules/*",
+    "**/dist/*",
+    "**/build/*"
+  ]
 }

@@ -31,6 +31,10 @@ const images: ArtImage[] = [
 	{ id: '7', name: 'No Image', description: '', link: 'covers/Montsalvens_08.jpg' },
 	{ id: '8', name: 'No Image', description: '', link: 'covers/Montsalvens_09.jpg' },
 	{ id: '9', name: 'No Image', description: '', link: 'covers/Montsalvens_10.jpg' },
+	{ id: '10', name: 'No Image', description: '', link: 'covers/Montsalvens_11.jpg' },
+	{ id: '11', name: 'No Image', description: '', link: 'covers/Montsalvens_12.jpg' },
+	{ id: '12', name: 'No Image', description: '', link: 'covers/Montsalvens_13.jpg' },
+	{ id: '13', name: 'No Image', description: '', link: 'covers/Montsalvens_14.jpg' },
 ];
 const openWatcher = (index: number) => {
 	emitter.emit('open', images, index);

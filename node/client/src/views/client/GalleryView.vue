@@ -18,10 +18,12 @@ import { ArtImage } from '@/intefaces/art-image';
 
 // const images = computed(() => store.getters.getImages || []);
 const images: ArtImage[] = [
-	{ id: '1', name: '', description: '', link: 'gallery/web2.jpg' },
-	{ id: '1', name: '', description: '', link: 'gallery/web1.jpg' },
-	{ id: '1', name: '', description: '', link: 'gallery/web4.jpg' },
-	{ id: '1', name: '', description: '', link: 'gallery/web5.jpg' }
+	{ id: '1', name: '', description: '', link: 'gallery/diesel.webp' },
+	{ id: '1', name: '', description: '', link: 'gallery/zelda.webp' },
+	{ id: '1', name: '', description: '', link: 'gallery/disturbia.webp' },
+	{ id: '1', name: '', description: '', link: 'gallery/slordef.webp' },
+	{ id: '1', name: '', description: '', link: 'gallery/cyber_souris.webp' },
+	{ id: '1', name: '', description: '', link: 'gallery/singe_planete.webp' }
 ];
 const openWatcher = (index: number) => {
 	emitter.emit('open', images, index);

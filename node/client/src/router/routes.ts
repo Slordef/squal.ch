@@ -6,6 +6,7 @@ import AdminView from '@/views/AdminView.vue';
 import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 import store from '@/store';
 import BookCoverView from '@/views/client/BookCoverView.vue';
+import CartesView from '@/views/client/CartesView.vue';
 
 const connectedMiddleware = async (to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
 	const connected = await store.dispatch('isConnected');
@@ -53,6 +54,7 @@ export const routes = [
 			// { path: '/', name: 'Home', component: HomeView },
 			{ path: '/', name: 'Gallery', component: GalleryView },
 			{ path: 'book-cover', name: 'Book Cover', component: BookCoverView },
+			{ path: 'cartes', name: 'Cartes', component: CartesView },
 			{ path: 'contact', name: 'Contact', component: ContactView },
 		]
 	},

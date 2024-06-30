@@ -16,6 +16,11 @@
         </router-link>
       </div>
       <div class="nav-elem">
+        <router-link :to="{name:'Cartes'}">
+          Cartes
+        </router-link>
+      </div>
+      <div class="nav-elem">
         <router-link :to="{name:'Contact'}">
           Contact
         </router-link>

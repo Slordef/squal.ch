@@ -54,7 +54,7 @@ export const routes = [
 			// { path: '/', name: 'Home', component: HomeView },
 			{ path: '/', name: 'Gallery', component: GalleryView },
 			{ path: 'book-cover', name: 'Book Cover', component: BookCoverView },
-			{ path: 'cartes', name: 'Cartes', component: CartesView },
+			{ path: 'cards', name: 'Cartes', component: CartesView },
 			{ path: 'contact', name: 'Contact', component: ContactView },
 		]
 	},

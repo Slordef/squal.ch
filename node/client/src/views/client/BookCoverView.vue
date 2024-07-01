@@ -1,5 +1,8 @@
 <template>
   <section class="gallery">
+    <div class="title-hidden">
+      <h1>Couvertures</h1>
+    </div>
     <div class="text-center mb-14">
       <p>Couvertures réalisées pour les Éditions Montsalvens</p>
       <p>Plus d’informations et commandes sur <a href="https://www.montsalvens.ch">www.montsalvens.ch</a></p>

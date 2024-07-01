@@ -1,4 +1,7 @@
 <template>
+  <div class="title-hidden">
+    <h1>Gallery</h1>
+  </div>
   <section class="gallery">
     <div class="gallery_pictures">
       <PictureFrame

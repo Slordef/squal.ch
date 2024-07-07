@@ -1,4 +1,4 @@
-FROM node:16-alpine AS build
+FROM node:20-alpine AS build
 
 RUN npm install -g pnpm
 
@@ -14,7 +14,7 @@ COPY . .
 
 RUN pnpm run --filter client build
 
-FROM nginx:1.21-alpine
+FROM nginx:1.27-alpine
 
 COPY --from=build /app/node/client/dist /var/www/html
 

@@ -1,0 +1,219 @@
+.header {
+  position: relative;
+  height: 160px;
+  margin: 0;
+  padding-left: 90px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  .nav-elem {
+    padding: 10px;
+    box-sizing: border-box;
+
+    &.current {
+      font-weight: bold;
+    }
+  }
+
+  a {
+    color: #000;
+
+    font-size: 1.2em;
+
+    &:hover {
+      /*color: #777;*/
+      color: #2e9897;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 100px;
+    background-color: #2e9897;
+    height: 3px;
+    width: 340px;
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+
+  .list-deroulante {
+    position: relative;
+
+    ul {
+      position: absolute;
+      z-index: 1000;
+      top: 100%;
+      left: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      background-color: rgba(235, 235, 240, 0.95);
+      white-space: nowrap;
+
+      display: none;
+      font-size: .8em;
+    }
+
+    &:hover ul {
+      display: inherit
+    }
+  }
+}
+
+a.logo {
+  position: absolute;
+  top: 45px;
+  right: 50px;
+
+  font-family: "Louis George Cafe", sans-serif;
+  font-size: 78px;
+
+  .logo_img {
+    position: absolute;
+    top: -45px;
+    left: 87px;
+
+    &.start {
+      animation: animateLogoStart 2s linear forwards;
+    }
+
+    &.animate {
+      animation: animateLogo 2s linear forwards;
+    }
+
+    img {
+      width: 30px;
+      height: 100%;
+    }
+  }
+
+  &:hover {
+    color: #2e9897;
+  }
+}
+
+@media all and (max-width: 900px) {
+  .header {
+    overflow: hidden;
+    height: auto;
+    max-height: 0;
+    transition: max-height .4s;
+
+    &.open {
+      max-height: 500px;
+    }
+
+    padding: 150px 0 0 0;
+    margin-bottom: 0;
+
+    display: block;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .list-deroulante {
+        text-align: center;
+
+        ul {
+          position: relative;
+          background-color: inherit;
+          display: inherit;
+
+          & .nav {
+            padding: 10px 0;
+
+            &:first-child {
+              padding: 20px 0 10px;
+            }
+          }
+        }
+      }
+    }
+
+    &::before {
+      display: none;
+    }
+
+    .menu {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(46, 152, 151, 0.51);
+      border-radius: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        border: 1px solid rgba(0, 0, 0, 0.6);
+      }
+
+      div {
+        background-color: rgba(46, 152, 151, 0.5);
+        border-radius: 5px;
+        width: 28px;
+        height: 3px;
+        margin: 2px;
+      }
+
+    }
+  }
+
+  a.logo {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+@keyframes animateLogoStart {
+  0% {
+    transform: translateX(300px) scaleX(-1);
+  }
+  90% {
+    transform: translateX(0) scaleX(-1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes animateLogo {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  24% {
+    transform: translateX(45px) scaleX(1);
+  }
+  33% {
+    transform: translateX(45px) scaleX(-1);
+  }
+  66% {
+    transform: translateX(-45px) scaleX(-1);
+  }
+  75% {
+    transform: translateX(-45px) scaleX(1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
+}

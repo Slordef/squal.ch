@@ -85,6 +85,14 @@ a.logo {
     top: -45px;
     left: 87px;
 
+    &.start {
+      animation: animateLogoStart 2s linear forwards;
+    }
+
+    &.animate {
+      animation: animateLogo 2s linear forwards;
+    }
+
     img {
       width: 30px;
       height: 100%;
@@ -174,5 +182,38 @@ a.logo {
   a.logo {
     right: 50%;
     transform: translateX(50%);
+  }
+}
+
+@keyframes animateLogoStart {
+  0% {
+    transform: translateX(300px) scaleX(-1);
+  }
+  90% {
+    transform: translateX(0) scaleX(-1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes animateLogo {
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  24% {
+    transform: translateX(45px) scaleX(1);
+  }
+  33% {
+    transform: translateX(45px) scaleX(-1);
+  }
+  66% {
+    transform: translateX(-45px) scaleX(-1);
+  }
+  75% {
+    transform: translateX(-45px) scaleX(1);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
   }
 }

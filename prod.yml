@@ -1,50 +1,17 @@
 version: '3.7'
 
 networks:
-  squal:
-    driver: bridge
-  db:
-    driver: bridge
+  nginx-network:
+    external:
+      name: nginx-network
 
 services:
-  db:
-    image: mariadb:10.4
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    volumes:
-      - ./db:/var/lib/mysql
-      - ./db:/docker-entrypoint-initdb.d
-    networks:
-      - db
-
   node:
     build:
       context: .
       dockerfile: docker/prod/node/Dockerfile
     restart: always
-    environment:
-      MYSQL_HOST: db
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-    depends_on:
-      - db
-    networks:
-      - squal
-      - db
-
-  nginx:
-    build:
-      context: .
-      dockerfile: docker/prod/nginx/Dockerfile
-    restart: always
     ports:
-      - '8080:80'
-    depends_on:
-      - node
+      - "8080:3000"
     networks:
-      - squal
+      - nginx-network

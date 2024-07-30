@@ -1,0 +1,57 @@
+@import '@csstools/normalize.css';
+
+@font-face {
+  font-family: "Louis George Cafe";
+  src: url("/fonts/Louis George Cafe Light.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Louis George Cafe", sans-serif;
+  font-size: 1.6em;
+  background: center fixed no-repeat linear-gradient(to bottom, #eee, #fff);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title-hidden {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: #2e9897;
+}
+
+.blur {
+  filter: blur(4px);
+  transition: .4s;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: #2e9897;
+}
+
+@import "commons";
+@import "home";
+@import "projects";
+@import "header";
+@import "footer";
+@import "pictureFrame";
+@import "pictureWatcher";
+@import "gallery";
+@import "contact";

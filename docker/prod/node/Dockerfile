@@ -4,12 +4,12 @@ RUN npm install -g pnpm
 
 WORKDIR /app
 
-COPY ["package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "./"]
-COPY ["node/client/package.json", "node/client/"]
-COPY ["node/server/package.json", "node/server/"]
+COPY ["package.json", "pnpm-lock.yaml", "./"]
 
 RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-RUN pnpm run --filter server build
+RUN pnpm run build
+
+CMD ["pnpm", "run", "start"]

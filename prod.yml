@@ -1,10 +1,5 @@
 version: '3.7'
 
-networks:
-  nginx-network:
-    external:
-      name: nginx-network
-
 services:
   node:
     build:
@@ -13,5 +8,3 @@ services:
     restart: always
     ports:
       - "8080:3000"
-    networks:
-      - nginx-network

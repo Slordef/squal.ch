@@ -36,7 +36,6 @@ export default function PictureWatcher() {
 
   const handleClick = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
-    console.log(target);
     if (target.classList.contains("pictureWatcher_image")) {
       close();
     }

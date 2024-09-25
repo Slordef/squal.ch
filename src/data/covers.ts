@@ -20,6 +20,12 @@ const images: ArtImage[] = [
     link: "covers/cover_angoisse_mortifere.webp",
   },
   {
+    id: "3",
+    name: "No Image",
+    description: "",
+    link: "covers/Au café des Ormeaux.webp",
+  },
+  {
     id: "13",
     name: "No Image",
     description: "",
@@ -98,22 +104,34 @@ const images: ArtImage[] = [
     link: "covers/cover_meurtre_compte_triple.webp",
   },
   {
-    id: "13",
+    id: "14",
     name: "No Image",
     description: "",
-    link: "covers/cover_le_rituel_des_fleurs.webp",
+    link: "covers/Le rituel des fleurs.webp",
   },
   {
-    id: "13",
+    id: "15",
     name: "No Image",
     description: "",
-    link: "covers/cover_le_bal_faux-culs.webp",
+    link: "covers/Le bal des faux-culs.webp",
   },
   {
-    id: "13",
+    id: "16",
     name: "No Image",
     description: "",
-    link: "covers/cover_noces_rouges_sur_l-ile_d-Ogoz.webp",
+    link: "covers/Noces rouges sur l'ile d'Ogoz.webp",
+  },
+  {
+    id: "17",
+    name: "No Image",
+    description: "",
+    link: "covers/Prélèvement sans gain.webp",
+  },
+  {
+    id: "18",
+    name: "No Image",
+    description: "",
+    link: "covers/Le crime du GoldenPass.webp",
   },
 ];
 
